@@ -107,7 +107,6 @@ function onCellClick(event) {
   //Comparison of 2 open cards
   if (opendCell.length == 2) {
     
-    if (opendCell[0].card.value === opendCell[1].card.value) {
       setTimeout (function() { 
         opendCell[0].status = "empty"; 
         opendCell[1].status = "empty"; 
