@@ -1,0 +1,76 @@
+/*@font-face {
+  font-family: "Pushster", cursive;
+  src: url("https://fonts.googleapis.com/css2?family=Bangers&family=Monoton&family=Pushster&display=swap");
+}*/
+
+body {
+  background-color: #eaf8f8;
+}
+/*top style*/
+.top {
+  padding: 10px;
+  margin: 1%;
+
+  background-color: #def1f6;
+  border: 2px solid #212830;
+}
+.top li {
+  display: inline;
+}
+.logopic img {
+  width: 60%;
+  /*border: 2px solid blue;*/
+}
+.login img {
+  width: 20%;
+  background-color: #5cc5b9;
+  border: 2px solid #212830;
+  margin-bottom: 5%;
+  margin-left: 15%;
+}
+/*navigation bar style*/
+.navbar {
+  margin: 1%;
+  text-align: center;
+  background-color: #def1f6;
+  border: 2px solid #212830;
+}
+.navbar li {
+  display: inline;
+}
+
+.navbar a {
+  /*display: block;*/
+  transition: 0.3s background-color;
+  padding: 10px;
+  font-size: 30px;
+  border: 2px solid #212830;
+}
+.navbar a:hover {
+  background-color: #5dc6ba;
+}
+/*.bab::after {
+  content: " ";
+  clear: both;
+  display: block;
+}
+*/
+table,
+tr {
+  margin: 20px auto;
+  border: 5px solid white;
+  border-collapse: collapse;
+}
+
+td {
+  width: 150px;
+  height: 150px;
+  background-color: #6a656b;
+}
+
+td img {
+  display: block;
+  margin: auto;
+  width: 150px;
+  height: 150px;
+}
