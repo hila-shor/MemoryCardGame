@@ -18,7 +18,7 @@ var card11 = new Card("https://publicdomainvectors.org/tn_img/tropical-coconut-c
 var card12 = new Card("https://publicdomainvectors.org/tn_img/princess-in-red-dress.webp", "princess in red dress");
 
  //array from all the cards objects
- var cardsArray = [card1, card2, card3, card4, card5, card6, card7, card8, card9, card10, card11, card12];
+var cardsArray = [card1, card2, card3, card4, card5, card6, card7, card8, card9, card10, card11, card12];
 //shuffle function
 
 function shuffle(array) {
@@ -26,20 +26,15 @@ function shuffle(array) {
 
   // While there remain elements to shuffle...
   while (currentIndex != 0) {
-
     // Pick a remaining element...
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex--;
 
     // And swap it with the current element.
-    [array[currentIndex], array[randomIndex]] = [
-      array[randomIndex], array[currentIndex]];
+    [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
   }
-
   return array;
 }
-
-// Used like so
 
 shuffle(cardsArray);
 console.log(cardsArray);
@@ -92,42 +87,42 @@ for (var i=0; i < cellsArray.length; i++) {
 }
 var opendCell = [];
 
-
 function onCellClick(event) {
-
+  if (opendCell.length == 2) {
+    return
+  }
   // find the id of the clicked cell and assign the cell number to variable
   var cellNumber = event.target.id.slice(4);
+  console.log("hi cellNumber:", cellNumber);
 
   //  change the cell status of the clicked cell for the first&sec click
-    
   cellsArray[cellNumber - 1].status = "open";
+  
   //push the cell object that clicked to array 
   opendCell.push(cellsArray[cellNumber - 1]);
     
   //Comparison of 2 open cards
   if (opendCell.length == 2) {
-    
+    if (opendCell[0].card.value === opendCell[1].card.value) {
       setTimeout (function() { 
         opendCell[0].status = "empty"; 
         opendCell[1].status = "empty"; 
         renderCells();
         opendCell=[]; 
-      }, 2000);
-        
+      }, 1000);
     } else {
       setTimeout (function() { 
         opendCell[0].status = "close"; 
         opendCell[1].status = "close"; 
         renderCells();
         opendCell=[];
-      }, 2000);
+      }, 1000);
     }
   }
   renderCells();
-} 
-
-
+}
 renderCells();
+
 
 /*for (var i=0; i<cellsArray.length; i++) {
   if (cellsArray[i].status = "empty") {
