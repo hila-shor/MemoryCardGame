@@ -63,7 +63,7 @@ var cellsArray = [cell1, cell2, cell3, cell4, cell5, cell6, cell7, cell8, cell9,
 console.log(cellsArray);
 
 var backImage = "backpic.JPG";
-var emptyImage = "empty11.png";
+var emptyImage = "emptypic.webp";
 
 function renderCells () {
   for (var i=0; i < cellsArray.length; i++) {

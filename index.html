@@ -1,8 +1,14 @@
-l<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
   <head>
     <link href="Final_EX2.CSS" type="text/css" rel="stylesheet">
+    
+    <!-- google font- CAESAR DRESSING-->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Caesar+Dressing&family=Monoton&family=Press+Start+2P&display=swap" rel="stylesheet">
+
     <title> Final_EX2 Memory Game</title>
   </head>
 
@@ -11,18 +17,42 @@ l<!DOCTYPE html>
     <div class="top">
   
     <ul  style= list-style-type:none;>
-        <li class= "logopic"> <img src= "fish-removebg-preview (2).png "></li>
-        <li class= "login"> <img src= "newLogin-removebg-preview.png"></li>
+      <li class="logopic"> <img src= "lampp-removebg-preview.png "></li>
+      <li class="memorize">MEMO-RIZE</li>
+      <li class="login"><button>Login/Sign-up</button></li>
       </ul>
 
     </div>
-<!--navigation bar-->
+<!--navigation bar with 3 buttons and dropdownlist-->
 
     <div class="navbar">
-      <ul  style= list-style-type:none;>
-        <li class="math"> <a href="#math">Math</a></li>
-        <li class="Classic"><a href="#classic">Classic</a></li>
-        <li class="reading"> <a href="#reading">Reading</a></li>
+      <ul>
+        <li class="dropdown math">
+          <button class="dropbtn math">Math</button>
+          <div class="dropdown-content">
+            <a href="math\math.html">List1</a>
+            <a href="#">List2</a>
+          </div>
+      </li>
+
+        <li class="dropdown classic">
+            <button class="dropbtn classic">Classic</button>
+            <div class="dropdown-content">
+              <a href="index.html">List1</a>
+              <a href="#">List2</a>
+            </div>
+        </li>
+
+
+        <li class="dropdown reading">
+          <button class="dropbtn reading">READING</button>
+          <div class="dropdown-content">
+            <a href="#">List1</a>
+            <a href="#">List2</a>
+          </div>
+      </li>
+
+
       </ul>
 
     </div>
