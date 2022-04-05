@@ -1,26 +1,104 @@
+
+// Games images by theme
+    // MATH
+var math1cards = [
+  ["math/2plus2.png" , 4],
+  ["math/4.png" , 4],
+  ["math/3plus6.png" , 9],
+  ["math/9.png" , 9],
+  ["math/4plus3.png" , 7],
+  ["math/7.png" , 7],
+  ["math/4plus9.png" , 13],
+  ["math/13.png" , 13],
+  ["math/5plus7.png" , 12],
+  ["math/12.png" , 12],
+  ["math/7plus4.png" , 11],
+  ["math/11.png", 11]
+];
+
+var math2cards = [];
+
+    //CLASSIC
+
+var classic1cards = [
+  ["https://publicdomainvectors.org/tn_img/princess-in-red-dress.webp" , "1"],
+  ["https://publicdomainvectors.org/tn_img/princess-in-red-dress.webp" , "1"],
+  ["https://publicdomainvectors.org/tn_img/tropical-coconut-cocktail.webp" , "2"],
+  ["https://publicdomainvectors.org/tn_img/tropical-coconut-cocktail.webp" , "2"],
+  ["https://publicdomainvectors.org/tn_img/baby-with-lolipop.webp" , "3"],
+  ["https://publicdomainvectors.org/tn_img/baby-with-lolipop.webp" , "3"],
+  ["https://publicdomainvectors.org/tn_img/screaming-teenage-girl.webp" , "4"],
+  ["https://publicdomainvectors.org/tn_img/screaming-teenage-girl.webp" , "4"],
+  ["https://publicdomainvectors.org/tn_img/woman-surfboard-public-domain-vector.webp" , "5"],
+  ["https://publicdomainvectors.org/tn_img/woman-surfboard-public-domain-vector.webp" , "5"],
+  ["https://publicdomainvectors.org/tn_img/man-playing-violin-publicdomain.org.webp" , "6"],
+  ["https://publicdomainvectors.org/tn_img/man-playing-violin-publicdomain.org.webp", "6"]
+];
+
+var classic2cards = [
+  ["classic/bow.png" , 1],
+  ["classic/bow.png" , 1],
+  ["classic/camel.png" , 2],
+  ["classic/camel.png" , 2],
+  ["classic/cow_face.png" , 3],
+  ["classic/cow_face.png" , 3],
+  ["classic/halfway.png" , 4],
+  ["classic/halfway.png" , 4],
+  ["classic/pyramid.png" , 5],
+  ["classic/pyramid.png" , 5],
+  ["classic/twisted_monkey.png" , 6],
+  ["classic/twisted_monkey.png", 6]
+];
+
+    //READING
+
+var reading1cards = [
+  ["reading/bad_p.png" , "1"],
+  ["reading/bad.png" , "1"],
+  ["reading/bed_p.png" , "2"],
+  ["reading/bed.png" , "2"],
+  ["reading/desk_p.png" , "3"],
+  ["reading/desk.png" , "3"],
+  ["reading/egg_p.png" , "4"],
+  ["reading/egg.png" , "4"],
+  ["reading/hen_p.png" , "5"],
+  ["reading/hen.png" , "5"],
+  ["reading/table_p.png" , "6"],
+  ["reading/table.png", "6"]
+];
+
+var reading2cards = [];
+
 //function constructor - build card object
 function Card(src, value) {
   this.frontImage = src;
   this.value = value;
 }
-// create cards objects
-var card1 = new Card("https://publicdomainvectors.org/tn_img/princess-in-red-dress.webp", "princess in red dress");
-var card2 = new Card("https://publicdomainvectors.org/tn_img/tropical-coconut-cocktail.webp", "tropical coconut cocktail");
-var card3 = new Card("https://publicdomainvectors.org/tn_img/baby-with-lolipop.webp", "baby with lolipop");
-var card4 = new Card("https://publicdomainvectors.org/tn_img/screaming-teenage-girl.webp", "screaming teenage girl");
-var card5 = new Card("https://publicdomainvectors.org/tn_img/woman-surfboard-public-domain-vector.webp", "woman surfboard public");
-var card6 = new Card("https://publicdomainvectors.org/tn_img/man-playing-violin-publicdomain.org.webp", "man playing violin");
-var card7 = new Card("https://publicdomainvectors.org/tn_img/man-playing-violin-publicdomain.org.webp", "man playing violin");
-var card8 = new Card("https://publicdomainvectors.org/tn_img/woman-surfboard-public-domain-vector.webp", "woman surfboard public");
-var card9 = new Card("https://publicdomainvectors.org/tn_img/screaming-teenage-girl.webp", "screaming teenage girl");
-var card10 = new Card("https://publicdomainvectors.org/tn_img/baby-with-lolipop.webp", "baby with lolipop");
-var card11 = new Card("https://publicdomainvectors.org/tn_img/tropical-coconut-cocktail.webp", "tropical coconut cocktail");
-var card12 = new Card("https://publicdomainvectors.org/tn_img/princess-in-red-dress.webp", "princess in red dress");
 
- //array from all the cards objects
-var cardsArray = [card1, card2, card3, card4, card5, card6, card7, card8, card9, card10, card11, card12];
-//shuffle function
+function makeCardsArray(details) {
+  var cardsArray = [];
+  for (var i=0; i< details.length; i++) {
+    cardsArray.push(new Card(details[i][0], details[i][1]));
+  }
+  return cardsArray;  
+}
 
+var details = classic2cards;
+
+var cardsArray = makeCardsArray(details);
+
+console.log(cardsArray);
+
+
+/*if () {
+  cardsArray = math1cards
+} else if () {
+  cardsArray = math2cards
+}*/
+
+
+
+//shuffle function- shuffle the cardsArray
 function shuffle(array) {
   let currentIndex = array.length,  randomIndex;
 
@@ -37,27 +115,22 @@ function shuffle(array) {
 }
 
 shuffle(cardsArray);
-console.log(cardsArray);
+
 //function constructor - build cell object
 function Cell(status, card) {
   this.status = status;
   this.card = card;
 }
-// create cells objects
-var cell1 = new Cell("close", cardsArray[0]);
-var cell2 = new Cell("close", cardsArray[1]);
-var cell3 = new Cell("close", cardsArray[2]);
-var cell4 = new Cell("close", cardsArray[3]);
-var cell5 = new Cell("close", cardsArray[4]);
-var cell6 = new Cell("close", cardsArray[5]);
-var cell7 = new Cell("close", cardsArray[6]);
-var cell8 = new Cell("close", cardsArray[7]);
-var cell9 = new Cell("close", cardsArray[8]);
-var cell10 = new Cell("close", cardsArray[9]);
-var cell11 = new Cell("close", cardsArray[10]);
-var cell12 = new Cell("close", cardsArray[11]);
 
-var cellsArray = [cell1, cell2, cell3, cell4, cell5, cell6, cell7, cell8, cell9, cell10, cell11, cell12];
+function makecellsArray() {
+  var cellsArray = [];
+  for (var i=0; i< cardsArray.length; i++) {
+    cellsArray.push(new Cell("close", cardsArray[i]));
+  }
+  return cellsArray;  
+}
+
+var cellsArray = makecellsArray();
 
 
 console.log(cellsArray);
@@ -86,8 +159,25 @@ for (var i=0; i < cellsArray.length; i++) {
   document.getElementById("cell" +(i+1)).onclick = onCellClick;
 }
 var opendCell = [];
+var time = 0;
+var timeElt = document.querySelector("#stopwatch");
+var postElement = document.querySelector("#post");
+var click = 0;
+var pair = 0;
 
 function onCellClick(event) {
+ //click count
+click++;
+  
+ //  start stopwatch
+if (click === 1) {
+ timer = setInterval(function() {
+ time++;
+ timeElt.innerHTML = time;
+  }, 1000);
+}
+
+  //The function stops if you click on a third card before comparing 2 cards
   if (opendCell.length == 2) {
     return
   }
@@ -103,13 +193,22 @@ function onCellClick(event) {
     
   //Comparison of 2 open cards
   if (opendCell.length == 2) {
+
+    //same
     if (opendCell[0].card.value === opendCell[1].card.value) {
       setTimeout (function() { 
         opendCell[0].status = "empty"; 
         opendCell[1].status = "empty"; 
         renderCells();
         opendCell=[]; 
-      }, 1000);
+        pair++;
+      
+        // win
+      if (pair == 6) {   
+        postElement.classList.remove("hidden");
+        clearInterval(timer);
+      }
+    }, 1000);
     } else {
       setTimeout (function() { 
         opendCell[0].status = "close"; 
