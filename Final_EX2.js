@@ -19,7 +19,6 @@ var math1cards = [
 var math2cards = [];
 
     //CLASSIC
-
 var classic1cards = [
   ["https://publicdomainvectors.org/tn_img/princess-in-red-dress.webp" , "1"],
   ["https://publicdomainvectors.org/tn_img/princess-in-red-dress.webp" , "1"],
@@ -51,7 +50,6 @@ var classic2cards = [
 ];
 
     //READING
-
 var reading1cards = [
   ["reading/bad_p.png" , "1"],
   ["reading/bad.png" , "1"],
@@ -69,13 +67,13 @@ var reading1cards = [
 
 var reading2cards = [];
 
-//function constructor - build card object
-function Card(src, value) {
+// Build card object
+function Card(src, value) {  //function constructor
   this.frontImage = src;
   this.value = value;
 }
 
-function makeCardsArray(details) {
+function makeCardsArray(details) { //build new cards objects and put them in array
   var cardsArray = [];
   for (var i=0; i< details.length; i++) {
     cardsArray.push(new Card(details[i][0], details[i][1]));
@@ -83,12 +81,36 @@ function makeCardsArray(details) {
   return cardsArray;  
 }
 
-var details = classic2cards;
+// Defulte game- classic list1
+var details = classic1cards;
+
+//change cards game onclick navigation bar
+
+document.getElementById("mathList1").onclick = function() {
+  console.log("hi hila i am in onclick math list1")
+  details = math1cards;
+  newGame();
+};
+document.getElementById("classicList1").onclick = function() {
+  console.log("hi hila i am in onclick math list1")
+  details = classic1cards;
+  newGame();
+};
+document.getElementById("classicList2").onclick = function() {
+  console.log("hi hila i am in onclick math list1")
+  details = classic2cards;
+  newGame();
+};
+document.getElementById("readingList1").onclick = function() {
+  console.log("hi hila i am in onclick math list1")
+  details = reading1cards;
+  newGame();
+};
+
 
 var cardsArray = makeCardsArray(details);
 
 console.log(cardsArray);
-
 
 /*if () {
   cardsArray = math1cards
@@ -116,8 +138,8 @@ function shuffle(array) {
 
 shuffle(cardsArray);
 
-//function constructor - build cell object
-function Cell(status, card) {
+// Build cell object
+function Cell(status, card) { //function constructor 
   this.status = status;
   this.card = card;
 }
@@ -132,8 +154,9 @@ function makecellsArray() {
 
 var cellsArray = makecellsArray();
 
-
 console.log(cellsArray);
+
+// render the images on the game board
 
 var backImage = "backpic.JPG";
 var emptyImage = "empty11.png";
@@ -154,21 +177,25 @@ function renderCell (cell, position) {
     imgElem.src = emptyImage;
   }
 }
-
+//Defined onclick event on every board cell
 for (var i=0; i < cellsArray.length; i++) {
   document.getElementById("cell" +(i+1)).onclick = onCellClick;
 }
+
+//The game- logic
 var opendCell = [];
+var opendCellNum = [];
 var time = 0;
 var timeElt = document.querySelector("#stopwatch");
 var postElement = document.querySelector("#post");
 var click = 0;
 var pair = 0;
+var timer;
 
 function onCellClick(event) {
  //click count
 click++;
-  
+document.getElementById("scoreCount").innerHTML = click; 
  //  start stopwatch
 if (click === 1) {
  timer = setInterval(function() {
@@ -181,50 +208,72 @@ if (click === 1) {
   if (opendCell.length == 2) {
     return
   }
+
   // find the id of the clicked cell and assign the cell number to variable
   var cellNumber = event.target.id.slice(4);
   console.log("hi cellNumber:", cellNumber);
+  opendCellNum.push(cellNumber);
+  console.log(opendCellNum);
 
   //  change the cell status of the clicked cell for the first&sec click
   cellsArray[cellNumber - 1].status = "open";
   
   //push the cell object that clicked to array 
   opendCell.push(cellsArray[cellNumber - 1]);
-    
+  console.log(opendCell);  
+
   //Comparison of 2 open cards
   if (opendCell.length == 2) {
 
     //same
-    if (opendCell[0].card.value === opendCell[1].card.value) {
+    if (opendCell[0].card.value === opendCell[1].card.valu && opendCellNum[0] != opendCellNum[1]) {
       setTimeout (function() { 
         opendCell[0].status = "empty"; 
         opendCell[1].status = "empty"; 
         renderCells();
         opendCell=[]; 
         pair++;
+        opendCellNum = [];
       
         // win
       if (pair == 6) {   
         postElement.classList.remove("hidden");
         clearInterval(timer);
+        document.getElementById("final").innerHTML = "You won in " + time + "seconds and " + click + "clicks"; 
+        setTimeout(hideCongratMassege, 3000);
+        setTimeout(newGame, 3000);
       }
-    }, 1000);
+    }, 500);
     } else {
       setTimeout (function() { 
         opendCell[0].status = "close"; 
         opendCell[1].status = "close"; 
         renderCells();
         opendCell=[];
-      }, 1000);
+        opendCellNum= [];
+      }, 500);
     }
   }
   renderCells();
 }
 renderCells();
+function hideCongratMassege() {
+  postElement.classList.add("hidden");
+}
+document.getElementById("newGamebtn").onclick = function() {newGame()};
+// New game
+function newGame() {
+  clearInterval(timer);
+  time = 0;
+  document.getElementById("stopwatch").innerHTML = 0;
+  click = 0;
+  document.getElementById("scoreCount").innerHTML = click; 
+  cardsArray = makeCardsArray(details);
+  shuffle(cardsArray);
+  cellsArray = makecellsArray();
+  renderCells();
+  opendCell = [];
+  pair = 0;
+}
 
 
-/*for (var i=0; i<cellsArray.length; i++) {
-  if (cellsArray[i].status = "empty") {
-    alert("congra");
-  }
-}*/ 
