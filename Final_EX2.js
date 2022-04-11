@@ -208,7 +208,7 @@ if (click === 1) {
   if (opendCell.length == 2) {
     return
   }
-
+ 
   // find the id of the clicked cell and assign the cell number to variable
   var cellNumber = event.target.id.slice(4);
   console.log("hi cellNumber:", cellNumber);
@@ -225,8 +225,13 @@ if (click === 1) {
   //Comparison of 2 open cards
   if (opendCell.length == 2) {
 
+    if (opendCellNum[0] == opendCellNum[1]) {
+      opendCell = [opendCell[0]];
+      opendCell[0].status = "open";
+      opendCellNum = [opendCellNum[0]];
+    }
     //same
-    if (opendCell[0].card.value === opendCell[1].card.valu && opendCellNum[0] != opendCellNum[1]) {
+    if (opendCell[0].card.value === opendCell[1].card.value){
       setTimeout (function() { 
         opendCell[0].status = "empty"; 
         opendCell[1].status = "empty"; 
@@ -234,6 +239,8 @@ if (click === 1) {
         opendCell=[]; 
         pair++;
         opendCellNum = [];
+
+     
       
         // win
       if (pair == 6) {   
