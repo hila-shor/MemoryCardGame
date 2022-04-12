@@ -182,7 +182,6 @@ td img {
   text-align: center;
   align-items: center;
   background: #f5e17e;
-  display: flex;
   z-index: 1;
 }
 .hidden {

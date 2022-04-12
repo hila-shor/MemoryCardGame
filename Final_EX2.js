@@ -235,15 +235,15 @@ if (click === 1) {
         pair++;
         opendCellNum = [];
 
-     
-      
+
         // win
       if (pair == 6) {   
         postElement.classList.remove("hidden");
         clearInterval(timer);
-        document.getElementById("final").innerHTML = "You won in " + time + "seconds and " + click + "clicks"; 
-        setTimeout(hideCongratMassege, 3000);
-        setTimeout(newGame, 3000);
+        document.getElementById("finalSec").innerHTML = "You won in " + time + " seconds  ";
+        document.getElementById("finalClick").innerHTML = "and " + click + " clicks";
+        setTimeout(hideCongratMassege, 3500);
+        setTimeout(newGame, 3500);
       }
     }, 500);
     } else {
@@ -259,6 +259,7 @@ if (click === 1) {
   renderCells();
 }
 renderCells();
+
 function hideCongratMassege() {
   postElement.classList.add("hidden");
 }
@@ -267,9 +268,9 @@ document.getElementById("newGamebtn").onclick = function() {newGame()};
 function newGame() {
   clearInterval(timer);
   time = 0;
-  document.getElementById("stopwatch").innerHTML = 0;
+  document.getElementById("stopWatch").innerHTML = 0;
   click = 0;
-  document.getElementById("scoreCount").innerHTML = click; 
+  document.getElementById("clickCount").innerHTML = click; 
   cardsArray = makeCardsArray(details);
   shuffle(cardsArray);
   cellsArray = makecellsArray();
@@ -277,5 +278,4 @@ function newGame() {
   opendCell = [];
   pair = 0;
 }
-
 
