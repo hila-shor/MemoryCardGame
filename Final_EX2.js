@@ -112,13 +112,6 @@ var cardsArray = makeCardsArray(details);
 
 console.log(cardsArray);
 
-/*if () {
-  cardsArray = math1cards
-} else if () {
-  cardsArray = math2cards
-}*/
-
-
 
 //shuffle function- shuffle the cardsArray
 function shuffle(array) {
@@ -137,6 +130,7 @@ function shuffle(array) {
 }
 
 shuffle(cardsArray);
+console.log(cardsArray);
 
 // Build cell object
 function Cell(status, card) { //function constructor 
@@ -186,7 +180,7 @@ for (var i=0; i < cellsArray.length; i++) {
 var opendCell = [];
 var opendCellNum = [];
 var time = 0;
-var timeElt = document.querySelector("#stopwatch");
+var timeElt = document.querySelector("#stopWatch");
 var postElement = document.querySelector("#post");
 var click = 0;
 var pair = 0;
@@ -195,9 +189,10 @@ var timer;
 function onCellClick(event) {
  //click count
 click++;
-document.getElementById("scoreCount").innerHTML = click; 
+document.getElementById("clickCount").innerHTML = click; 
  //  start stopwatch
 if (click === 1) {
+ 
  timer = setInterval(function() {
  time++;
  timeElt.innerHTML = time;

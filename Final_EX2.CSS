@@ -136,10 +136,10 @@ body {
   display: block;
 }
 */
-.theGame {
+/*.theGame {
   position: relative;
-  /*top: 80px;*/
-}
+  top: 80px;
+} */
 
 table,
 tr {
@@ -185,25 +185,52 @@ td img {
   display: flex;
   z-index: 1;
 }
+.hidden {
+  display: none !important;
+}
+/*Performence*/
+
+#Performance {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+#Performance ul {
+  list-style-type: none;
+  margin: 0;
+}
+#Performance li {
+  display: inline-block;
+  font-size: 20px;
+  height: 75px;
+  width: 300px;
+  text-align: center;
+  margin: auto;
+  color: #6d75ae;
+}
+
+#stopWatch::after {
+  content: " seconds";
+  font-size: 20px;
+  color: #6d75ae;
+}
+#clickCount::after {
+  content: " clicks";
+  font-size: 20px;
+  color: #6d75ae;
+}
+
+.newgame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #newGamebtn {
-  position: relative;
-  left: 44%;
-  /*bottom: 300px;*/
   border: 5px solid #8cc28d;
   border-radius: 50px;
   font-family: "Caesar Dressing", cursive;
   font-size: 50px;
   color: #6d75ae;
   background-color: #8cc28d;
-}
-/*Performence*/
-
-#stopwatch::after {
-  content: " seconds";
-}
-#scoreCount::after {
-  content: " clicks";
-}
-.hidden {
-  display: none !important;
 }
