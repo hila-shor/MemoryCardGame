@@ -100,7 +100,7 @@ function endGame() {
   clearInterval(timer);
   document.getElementById("finalSec").innerHTML = "You won in " + time + " seconds  ";
   document.getElementById("finalClick").innerHTML = "and " + click + " clicks";
-  setTimeout(hideCongratMassege, 3500);
+  setTimeout(hideCongratMassege, 8500);
   setTimeout(newGame, 3500);
 }
 

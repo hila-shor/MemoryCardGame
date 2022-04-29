@@ -36,7 +36,9 @@ body {
   font-size: 180px;
   color: #6a718c;
 }
-.login button {
+/* next stape - login*/
+
+/*.login button {
   position: relative;
   left: 200px;
   bottom: 100px;
@@ -46,7 +48,7 @@ body {
   font-size: 50px;
   color: #6a718c;
   background-color: #f5e17e;
-}
+}*/
 /*.login img {
   width: 20%;
   background-color: #5cc55b9;
@@ -130,106 +132,4 @@ body {
     margin: 0 0px;
   }
 }
-/*.bab::after {
-  content: " ";
-  clear: both;
-  display: block;
-}
-*/
-/*.theGame {
-  position: relative;
-  top: 80px;
-} */
 
-table,
-tr {
-  margin: 20px auto;
-  border-collapse: collapse;
-}
-
-td {
-  display: inline-block;
-  /*background-color: #f5e17e;*/
-  margin: auto;
-  padding: 3px;
-  width: 150px;
-  height: 150px;
-  border-radius: 5px;
-  border: 1px solid #868d8a;
-}
-
-td img {
-  display: block;
-  margin: 0;
-  width: 150px;
-  height: 150px;
-  border-radius: 5px;
-  /*border: 1px solid #868d8a;*/
-}
-
-.theGame {
-  position: relative;
-  /*top: 80px;*/
-}
-#post {
-  position: absolute;
-  top: 120px;
-  left: 35%;
-  height: 250px;
-  width: 420px;
-  color: #6d75ae;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  background: #f5e17e;
-  z-index: 1;
-}
-.hidden {
-  display: none !important;
-}
-/*Performence*/
-
-#Performance {
-  margin: 0;
-  padding: 0;
-  text-align: center;
-}
-#Performance ul {
-  list-style-type: none;
-  margin: 0;
-}
-#Performance li {
-  display: inline-block;
-  font-size: 20px;
-  height: 75px;
-  width: 300px;
-  text-align: center;
-  margin: auto;
-  color: #6d75ae;
-}
-
-#stopWatch::after {
-  content: " seconds";
-  font-size: 20px;
-  color: #6d75ae;
-}
-#clickCount::after {
-  content: " clicks";
-  font-size: 20px;
-  color: #6d75ae;
-}
-
-.newgame {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#newGamebtn {
-  border: 5px solid #8cc28d;
-  border-radius: 50px;
-  font-family: "Caesar Dressing", cursive;
-  font-size: 50px;
-  color: #6d75ae;
-  background-color: #8cc28d;
-}

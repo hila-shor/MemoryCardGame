@@ -2,8 +2,8 @@
 <html>
 
   <head>
-    <link href="style_M/Final_EX2.CSS" type="text/css" rel="stylesheet">
-    
+    <link href="style_M/topAndNavbar.CSS" type="text/css" rel="stylesheet">
+    <link href="style_M/game.CSS" type="text/css" rel="stylesheet">
     <!-- google font- CAESAR DRESSING-->
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -58,39 +58,40 @@
   
 <!-- THE GAME BOARD-->
     <div class="theGame">
-        
-      <table class="center">
-        <tr>
-          <td ><img id="cell1"></td>
-          <td> <img id="cell2"></td>
-          <td> <img id="cell3"></td>
-          <td> <img id="cell4"></td>
-        </tr>
-  
-        <tr>
-          <td><img id="cell5"></td>
-          <td> <img id="cell6"></td>
-          <td> <img id="cell7"></td>
-          <td> <img id="cell8"></td>
-        </tr>
-  
-        <tr>
-          <td><img id="cell9"></td>
-          <td> <img id="cell10"></td>
-          <td> <img id="cell11"></td>
-          <td> <img id="cell12"></td>
-        </tr>
+      <div class="board">  
+        <table>
+          <tr>
+            <td ><img id="cell1"></td>
+            <td> <img id="cell2"></td>
+            <td> <img id="cell3"></td>
+            <td> <img id="cell4"></td>
+          </tr>
+    
+          <tr>
+            <td><img id="cell5"></td>
+            <td> <img id="cell6"></td>
+            <td> <img id="cell7"></td>
+            <td> <img id="cell8"></td>
+          </tr>
+    
+          <tr>
+            <td><img id="cell9"></td>
+            <td> <img id="cell10"></td>
+            <td> <img id="cell11"></td>
+            <td> <img id="cell12"></td>
+          </tr>
 
-      </table>
+        </table>
+      </div>
 
-      <div id="Performance">
+      <div id="performanceCounter">
         <ul>
           <li id="stopWatch">0</li>
           <li id="clickCount">0</li>
         </ul>
       </div>
 
-      <div id="post" class="hidden">
+      <div id="gameEndMessage" class="hidden">
             <h2>awsome</h2> <br>
             <p id="finalSec"></p>
             <p id="finalClick"></p>
@@ -98,7 +99,7 @@
 
     </div>
 
-    <div class="newgame">
+    <div class="newGame">
       <button id="newGamebtn">NEW GAME</button>
     </div>
 
