@@ -15,8 +15,36 @@
       ["images_M/math/list1_math/11.png", 11]
     ];
     
-    var math2cards = [];
+    var math2cards = [
+      ["images_M/math/list2_math/1oplus1.png" , 11],
+      ["images_M/math/list2_math/11.png" , 11],
+      ["images_M/math/list2_math/11plus1.png" , 12],
+      ["images_M/math/list2_math/12.png" , 12],
+      ["images_M/math/list2_math/14plus1.png" , 15],
+      ["images_M/math/list2_math/15.png" , 15],
+      ["images_M/math/list2_math/16plus1.png" , 17],
+      ["images_M/math/list2_math/17.png" , 17],
+      ["images_M/math/list2_math/18plus1.png" , 19],
+      ["images_M/math/list2_math/19.png" , 19],
+      ["images_M/math/list2_math/19plus1.png" , 20],
+      ["images_M/math/list2_math/20.png" , 20]
+    ];
     
+    var mathAddingWholeTens = [
+      ["images_M/math/addingWholeTens/10plus10.png" , 20],
+      ["images_M/math/addingWholeTens/20.png" , 20],
+      ["images_M/math/addingWholeTens/20plus30.png" , 50],
+      ["images_M/math/addingWholeTens/50.png" , 50],
+      ["images_M/math/addingWholeTens/40plus30.png" , 70],
+      ["images_M/math/addingWholeTens/70.png" , 70],
+      ["images_M/math/addingWholeTens/50plus30.png" , 80],
+      ["images_M/math/addingWholeTens/80.png" , 80],
+      ["images_M/math/addingWholeTens/60plus20.png" , 80],
+      ["images_M/math/addingWholeTens/80.png" , 80],
+      ["images_M/math/addingWholeTens/70plus20.png" , 90],
+      ["images_M/math/addingWholeTens/90.png" , 90],
+    ];
+
         //CLASSIC
     var classic1cards = [
       ["https://publicdomainvectors.org/tn_img/princess-in-red-dress.webp" , 1],

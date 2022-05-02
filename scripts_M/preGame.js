@@ -18,6 +18,8 @@ var details = classic1cards;
 
 //Define onclick event on navigation bar to Change cards game 
 document.getElementById("mathList1").onclick = function () {onNavbarClick(math1cards)};
+document.getElementById("mathList2").onclick = function () {onNavbarClick(math2cards)};
+document.getElementById("mathAddingWholeTens").onclick = function () {onNavbarClick(mathAddingWholeTens)};
 document.getElementById("classicList1").onclick =function() {onNavbarClick(classic1cards)};
 document.getElementById("classicList2").onclick =function() {onNavbarClick(classic2cards)};
 document.getElementById("readingList1").onclick =function() {onNavbarClick(reading1cards)};

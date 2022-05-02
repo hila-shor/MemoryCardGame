@@ -9,65 +9,56 @@ var opendCell = [];
 var opendCellNum = [];
 var time = 0;
 var timeElt = document.querySelector("#stopWatch");
-var postElement = document.querySelector("#post");
+var postElement = document.querySelector("#gameEndMessage");
 var click = 0;
-var pair = 0;
+var pairCount = 0;
 var timer;
 
 // Main game function
 function onCellClick(event) {
+  var cellNumber = event.target.id.slice(4);
+  var cell = cellsArray[cellNumber - 1];
 
-  clickCount();
-
-  // Start game watch
-  if (click === 1) {
-    startWatch();
+  if (cell.status != "close"){
+    return;
   }
-
+  
   // Ignore more than two cards
   if (opendCell.length == 2) {
     return;
   }
-  
-  // Save cell position
-  var cellNumber = event.target.id.slice(4);
-  console.log("hi cellNumber:", cellNumber);
-  opendCellNum.push(cellNumber);
-  console.log(opendCellNum);
 
-  // Change the cell status 
-  cellsArray[cellNumber - 1].status = "open";
+  clickCount();
+
+  // Start game watch on first click
+  if (click === 1) {
+    startWatch();
+  }
+
+  cell.status = "open";  
+  opendCell.push(cell);
+  //opendCellNum.push(cellNumber);
   
-  // Save two opend cards for Comparison
-  opendCell.push(cellsArray[cellNumber - 1]);
-  console.log(opendCell);  
+  if (opendCell.length < 2) {
+    renderCells();
+    return;
+  }
 
   //Comparison of 2 open cards
-  if (opendCell.length == 2) {
 
-    //same card?
-    if (opendCellNum[0] == opendCellNum[1]) {
-      opendCell = [opendCell[0]];
-      opendCell[0].status = "open";
-      opendCellNum = [opendCellNum[0]];
+  // Matching cards ?
+  if (opendCell[0].card.value === opendCell[1].card.value){
+    setTimeout (function() { 
+      turnEmpty();
+      // Win the game
+    if (pairCount == 6) {   
+      endGame();
     }
+  }, 1000);
 
-    // Match cards 
-    if (opendCell[0].card.value === opendCell[1].card.value){
-      setTimeout (function() { 
-        pairMaker();
-        // Win the game
-      if (pair == 6) {   
-        endGame();
-      }
-    }, 500);
-
-    // Unmatch cards
-    } else {
-      setTimeout (function() { 
-        turnUnmatch();
-      }, 500);
-    }
+  // Unmatch cards
+  } else {
+    setTimeout (turnUnmatch, 1000);
   }
   renderCells();
 }
@@ -86,12 +77,12 @@ function clickCount () {
   click++;
   document.getElementById("clickCount").innerHTML = click; 
 }
-function pairMaker() {
+function turnEmpty() {
   opendCell[0].status = "empty"; 
   opendCell[1].status = "empty"; 
   renderCells();
   opendCell=[]; 
-  pair++;
+  pairCount++;
   opendCellNum = [];
 }
 
@@ -100,7 +91,7 @@ function endGame() {
   clearInterval(timer);
   document.getElementById("finalSec").innerHTML = "You won in " + time + " seconds  ";
   document.getElementById("finalClick").innerHTML = "and " + click + " clicks";
-  setTimeout(hideCongratMassege, 8500);
+  setTimeout(hideCongratMassege, 3000);
   setTimeout(newGame, 3500);
 }
 
@@ -131,5 +122,6 @@ function newGame() {
   renderCells();
   opendCell = [];
   pair = 0;
+  hideCongratMassege();
 }
 

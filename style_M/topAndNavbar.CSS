@@ -5,6 +5,7 @@
 
 body {
   background-color: #e0e3e7;
+ 
 }
 body {
   font-family: "Bangers", cursive;
@@ -16,28 +17,29 @@ body {
 .top {
   padding: 10px;
   margin: 1%;
-
-  background-color: #e0e3e7;
-  /*border: 2px solid #212830;*/
+  position: relative;
+  right:10%;
+  text-align: center;
 }
+.top ul{
+} 
 .top li {
   display: inline;
+  justify-content: center;
 }
+
 .logopic img {
   width: 15%;
   margin: o;
-  /*border: 2px solid rgb(4, 4, 5);*/
 }
 .memorize {
-  position: relative;
-  top: -20px;
-  left: 50px;
+  width: 40%;
   font-family: "Caesar Dressing", cursive;
-  font-size: 180px;
+  font-size:12em;
   color: #6a718c;
 }
-/* next stape - login*/
 
+/* next stape - login*/
 /*.login button {
   position: relative;
   left: 200px;
@@ -64,12 +66,12 @@ body {
   background-color: #8cc28d;
   position: relative;
   bottom: 40px;
-  /*border: 2px solid #212830;*/
 }
 .navbar ul {
   list-style-type: none;
   padding: 0;
 }
+
 /* style nav buttons and three dropdown lists */
 /*button*/
 .dropbtn {
@@ -90,9 +92,9 @@ body {
   display: inline-block;
 }
 .dropdown-content {
-  /*The list is not visible and no space is reserved for it*/
+    /*The list is not visible and no space is reserved for it*/
   display: none;
-  /*the position is relative to .dropdown*/
+    /*the position is relative to .dropdown*/
   position: absolute;
   background-color: #faebf5;
   min-width: 120px;
@@ -113,14 +115,14 @@ body {
 .dropdown-content p:hover {
   background-color: #f1f1f1;
 }
-/*when hover the button the list becomes visible*/
+  /*when hover the button the list becomes visible*/
 .dropdown:hover .dropdown-content {
   display: block;
 }
 .dropdown:hover .dropbtn {
   background-color: #f5e17e;
 }
-
+/*
 @media screen and (min-width: 768px) {
   .navbar ul {
     display: flex;
@@ -131,5 +133,4 @@ body {
     //flex: 1 1 0;
     margin: 0 0px;
   }
-}
-
+}*/
