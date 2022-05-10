@@ -22,7 +22,6 @@ function onCellClick(event) {
   if (cell.status != "close"){
     return;
   }
-  
   // Ignore more than two cards
   if (opendCell.length == 2) {
     return;
@@ -70,7 +69,7 @@ function startWatch () {
   timer = setInterval(function() {
     time++;
     timeElt.innerHTML = time;
-     }, 1000);
+  }, 1000);
 }
 
 function clickCount () {

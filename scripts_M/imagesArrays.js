@@ -45,6 +45,21 @@
       ["images_M/math/addingWholeTens/90.png" , 90],
     ];
 
+    var mathSubtractWholeTen = [
+      ["images_M/math/subtractWholeTens/90minus30.png" , 60],
+      ["images_M/math/subtractWholeTens/90minus20.png" , 70],
+      ["images_M/math/subtractWholeTens/60.png" , 60],
+      ["images_M/math/subtractWholeTens/70.png" , 70],
+      ["images_M/math/subtractWholeTens/80minus70.png" , 10],
+      ["images_M/math/subtractWholeTens/80minus40.png" , 40],
+      ["images_M/math/subtractWholeTens/70minus40.png" , 30],
+      ["images_M/math/subtractWholeTens/40.png" , 40],
+      ["images_M/math/subtractWholeTens/30.png" , 30],
+      ["images_M/math/subtractWholeTens/10.png" , 10],
+      ["images_M/math/subtractWholeTens/50minus30.png" , 20],
+      ["images_M/math/subtractWholeTens/20.png" , 20],
+    ];
+
         //CLASSIC
     var classic1cards = [
       ["https://publicdomainvectors.org/tn_img/princess-in-red-dress.webp" , 1],
